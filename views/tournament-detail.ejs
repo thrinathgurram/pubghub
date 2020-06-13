@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Hub</title>
+	<!--Import Google Icon Font-->
+	<script data-ad-client="ca-pub-3823036483007859" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="#html-include-asset=/css/libs/prism.css" media="screen" />
+	<link rel="shortcut icon" type="image/png" href="/image/fav.png" />
+	<!--Import materialize.css-->
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/new.css">
+
+</head>
+<style>
+	ul li {
+		display: inline;
+		padding: 100px;
+	}
+
+	#modal1 {
+		margin-top: 14%;
+		background-color: #212121
+	}
+
+	.pm-button {
+		margin-left: 26%;
+	}
+</style>
+
+<body>
+
+	<!-- menu navbar -->
+
+
+	<div class="navbar-fixed">
+		<nav class="black">
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="/" class="brand-logo">Game<span class="hub">Hub</span></a>
+					<a href="#" data-target="mobile-nav" class="sidenav-trigger">
+						<i class="material-icons">menu</i>
+						<ul class="right hide-on-med-and-down">
+							<li><a href="/tournament">Tournament</a></li>
+							<% if(login == true)  { %>
+							<li><a href="/account">My Account</a></li>
+							<li><a href="/signup/logout">Logout</a></li>
+							<a class="waves-effect waves-light btn dropdown-trigger btn red darken-4">Hi
+								<%= result[0][0].name %></a>
+							<!-- dropdown -->
+
+							<% } else { %>
+							<a class="waves-effect waves-light btn modal-trigger red darken-4"
+								href="/login">Login/Signup</a>
+							<% } %>
+						</ul>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<!-- banner image -->
+	<div class="banner">
+		<div class="container">
+			<div class="col">
+				<div class="card col s12" style="    position: absolute;
+				  margin-top: 9%;
+				  width: 70%;
+				  background-color: #212121;
+				  height: auto;">
+					<div class="card-content white-text">
+						<img src="https://api.gamingmonk.com/images/games/2/newlogo.jpg" height="150" style="position: relative;
+						margin-top: -15%; margin-left: 44%;">
+
+						<span class="card-title" style="text-align: center;"><%= result[1][0].tournamentname %></span>
+						<center><a class="waves-effect waves-light btn red darken-4"><i
+									class="material-icons left">done</i>Register Open</a></center>
+						<div class="list" style="margin-top: 10%	;">
+							<div class="calendar">
+								<i class="material-icons calendar"
+									style="margin-left: 6%; font-size: 73px;">calendar_today</i>
+								<h5><%= result[1][0].startdate %></h5>
+							</div>
+							<div class="pricedetail" style="margin-left: 46%; margin-top: -13%;">
+								<i class="material-icons events"
+									style="font-size:73px; margin-left: -1%;">emoji_events</i>
+								<h5><%= result[1][0].poolprice %></h5>
+							</div>
+							<div class="group" style="margin-left: 91%; margin-top: -13%;">
+								<i class="material-icons events" style="font-size:73px; margin-left:-8%;">group</i>
+								<h5><%= result[1][0].type %></h5>
+							</div>
+
+						</div>
+					</div>
+					
+					<div class="card-action">
+						
+						<a href="#modal1" class="waves-effect btn modal-trigger waves-light btn red darken-4"><i
+								class="material-icons left">local_airport
+							</i>Book Now ( Rs <%= result[1][0]. entryprice %> )</a>
+
+							
+						<!-- modal -->
+						<div id="modal1" class="modal">
+							<div class="modal-content">
+								<h4 style="color: white;">Pay Online And Book Your Slot</h4>
+								<div class="col s6">
+									<!-- /tournament-detail/booking -->
+									<form action="/tournament-detail/booking" method="post">
+										<div class="row">
+											<div class="input-field col s12">
+												<button type="submit" class="btn btn red darken-4">PAY NOW</button>
+											</div>
+
+										</div>
+									</form>
+								</div>
+							</div>
+
+						</div>
+						<a class="waves-effect waves-light btn red darken-4" style="float: right;"><i
+								class="material-icons left">my_location
+							</i>Rules</a>
+
+					</div>
+					<h5 style="margin-left: 10px">PRICE POOL BRAKEUP</h5>
+					<table class="container" style="color: white;">
+						<thead>
+							<tr>
+								<th>Standing</th>
+								<th>Cash Price</th>
+								<th>Points</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Alvin</td>
+								<td>Eclair</td>
+								<td>$0.87</td>
+							</tr>
+							<tr>
+								<td>Alan</td>
+								<td>Jellybean</td>
+								<td>$3.76</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+								<td>$7.00</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+								<td>$7.00</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+								<td>$7.00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>

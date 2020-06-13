@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="css/login.css">
+<form class="login" action="/signup/insert" method="post">
+  <h1>Signup With Account</h1>
+  <% if (messages.error) { %>
+    <center> <div class="alert alert-danger" role="alert" style="color: red;"><h1><%- messages.error %></h1></div> </center>
+   <% } %>  
+  <input type="text" placeholder="Enter Name" name="name" required/>
+  <input type="number" placeholder="Mobile Number" name="number" required/>
+  <input type="password" placeholder="Password" name="password" required/>
+  <input type="number" placeholder="Enter Paytm Mobile Number" name="paytmnumber" required/>
+  <input type="text" placeholder="Enter Game User Name" name="gameid" required/>
+
+  <button type="submit">Signup</button>
+</form>
+
+

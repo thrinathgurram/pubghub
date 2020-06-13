@@ -1,0 +1,38 @@
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" type="image/png" href="/image/fav.png" />
+<link rel="stylesheet" href="css/login.css">
+
+<div class="container">
+  <div class="form">
+    <div class="sign-in-section">
+      <h1>Log in</h1>
+      <% if (messages.error) { %>
+        <center> <div class="alert alert-danger" role="alert" style="color: red;"><h4><%- messages.error %></h4></div> </center>
+       <% } %>
+      <form action="/signup/all" method="post">
+        <div class="form-field">
+          <label for="email">Name</label>
+          <input id="email" type="number" name="number" />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" />
+        </div>
+        <div class="form-options">          
+        </div>
+        <div class="form-field">
+          <input type="submit" class="btn btn-signin" value="Login" />
+        </div>
+      </form>
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

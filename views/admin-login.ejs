@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/adminlogin.css">  
+  <link rel="shortcut icon" type="image/png" href="/image/fav.png" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Admin Game Hub</title>
+</head>
+<body>
+    <div class="main">
+       <p class="sign" align="center">Admin Login</p>
+     <form class="form1" action="/admin-login/adminlogin" method="post">
+         <!-- if credentials error show error message -->
+         <% if (messages.error) { %>
+            <center> <div class="alert alert-danger error" role="alert"><%- messages.error %></div> </center>
+               <% } %>
+      <input class="un " type="text" name="username" align="center" placeholder="Username">
+      <input class="pass" type="password" name="password" align="center" placeholder="Password">
+      <input type="submit" class="submit" align="center">    
+     </form>            
+    </div>
+</body>
+</html>

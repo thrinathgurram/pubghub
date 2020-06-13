@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Game Hub Admin Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/png" href="/image/fav.png" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+    
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include('partials/admin-sidebar') %>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <%- include('partials/admin-nav') %>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Add Tournament</h1>
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#exampleModal" style="margin-left: 59%;"><i class="fas fa-plus fa-sm text-white-50"></i> Add Pool Price Breakup</a>
+ 
+                           
+                <!-- add game tournament -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Add Tournament</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form action="/poolprice/insert" method="post">
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Choose Game Category</label>
+                              <select area-required="true" name="categoryname" id="categoryname" class="form-control"></select>
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">1st Price</label>
+                              <input type="text" name="one" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">2nd Price</label>
+                                <input type="text" name="two" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">3rd Price</label>
+                                <input type="text" name="three" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">4th Price</label>
+                                <input type="text" name="four" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">5th Price</label>
+                                <input type="text" name="five" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">6th Price</label>
+                                <input type="text" name="six" class="form-control" id="recipient-name">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">7th Price</label>
+                                <input type="text" name="seven" class="form-control" id="recipient-name">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">8th Price</label>
+                                <input type="text" name="eight" class="form-control" id="recipient-name">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">9th Price</label>
+                                <input type="text" name="nine" class="form-control" id="recipient-name">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">10th Price</label>
+                                <input type="text" name="ten" class="form-control" id="recipient-name">
+                              </div>
+
+                          
+                        </div>
+                        <div class="modal-footer">
+                          
+                          <input type="submit" class="btn btn-primary">
+                          <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/10159880CB0AEE547F5BED69155E6CAF'><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/11.png' /></a></div> 
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>  
+            </div>
+  
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">All Tournament</h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <div class="result"></div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <!-- /.container-fluid -->
+  
+        </div>
+     
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Game Hub 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/assets/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/assets/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/assets/js/demo/chart-area-demo.js"></script>
+  <script src="/assets/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+<script>
+    a()
+    function a() {
+        $.getJSON('/add-tournament/alldata', (data) => {
+
+            maketable(data)
+        })
+    }
+    function maketable(data) {
+
+        let table = `   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                            <thead>
+                                    <tr>
+                                        <th>Game Category</th>
+                                        <th>Tournament</th>
+                                        <th>Map</th>
+                                        <th>Type</th>
+                                        <th>Entry Price</th>
+                                        <th>Start date</th>
+                                        <th>Pool Price</th>
+                                        <th>Remove</th>   
+                                        
+                                           
+                                    </tr>
+                                </thead>`
+        $.each(data, function (i, item) {
+            table += `    <tbody>
+
+                                    <tr class="table__row">
+
+                                        <td>${item.categoryname}</td>
+                                        <td>${item.tournamentname}</td>
+                                        <td>${item.map}</td>
+                                        <td>${item.type}</td>
+                                        <td>${item.entryprice}</td>
+                                        <td>${item.startdate}</td>
+                                        <td>${item.poolprice}</td>
+                                        <td><a href="/add-tournament/removeteam?id=${item.id}"><input type="button" value="Delete" class="btn btn-danger"></a></td>
+                                        
+                                    </tr>
+                                </tbody>`
+        })
+        table += `   </table>`
+
+        $('.result').html(table)
+
+
+    }
+</script>
+
+<script>
+    $.getJSON("/poolprice/categorydetail", data => {
+        project = data;
+        console.log(data);
+        fillDropDown("categoryname", data, "Choose Game Category", 0);
+    });
+
+    function fillDropDown(id, data, label, selectedid = 0) {
+        $(`#${id}`).empty();
+        $(`#${id}`).append(
+            $("<option>")
+                .val("null")
+                .text(label)
+        );
+        $.each(data, (i, item) => {
+            if (item.id == selectedid) {
+                $(`#${id}`).append(
+                    $("<option selected>")
+                        .val(item.id)
+                        .text(item.id)
+                );
+            } else {
+                $(`#${id}`).append(
+                    $("<option>")
+                        .val(item.id)
+                        .text(item.id)
+                );
+            }
+        });
+    };
+</script>
+
+</html>
